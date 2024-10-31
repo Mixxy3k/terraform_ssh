@@ -13,6 +13,10 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 0.14.7
+      - name: Add Docker server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 20.215.200.155 >> ~/.ssh/known_hosts
       - name: Terraform Init
         run: terraform init
     #   - name: Terraform Plan
