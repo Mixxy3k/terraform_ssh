@@ -19,7 +19,6 @@ resource "docker_container" "owo_app" {
 
 provider docker {
     host = "tcp://20.215.200.155:2377"
-    password = {var.docker_password}
 }
 
 variable "docker_password" {
