@@ -9,7 +9,7 @@ terraform {
 }
 
 resource "docker_container" "owo_app" {
-    image = "mixxy4k/owo"
+    image = "mixxy3k/owo"
     name = "owo_app"
     ports {
         internal = 80
@@ -17,9 +17,14 @@ resource "docker_container" "owo_app" {
     }
 }
 
-# # docker provider via ssh
-# provider "docker" {
-#     host = "ssh://artur@20.215.200.155"
-#     passw
-    
-# }
+provider docker {
+    host = host = "tcp://20.215.200.155:2375"
+    password = {var.docker_password}
+}
+
+variable "docker_password" {
+  type        = string
+  default     = "password"
+  description = "description"
+  sensitive   = true
+}

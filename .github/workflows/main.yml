@@ -24,5 +24,4 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
         env: 
-          DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

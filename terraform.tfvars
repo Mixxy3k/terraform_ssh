@@ -1,0 +1,3 @@
+{
+  "docker_password": "password",
+}
